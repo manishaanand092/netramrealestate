@@ -1,0 +1,461 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Google Fonts preload hint ─────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Prevent layout shift from scrollbar appearing */
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    background-color: #0B0B0B;
+    color: #F5F0E8;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Subtle noise texture for depth */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  /* Premium gold scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B0B0B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #C89B3C, #E7B75F);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #E7B75F, #F5D98B);
+  }
+
+  /* Selection color */
+  ::selection {
+    background: rgba(200, 155, 60, 0.25);
+    color: #F5D98B;
+  }
+
+  /* Focus visible — accessible gold ring */
+  :focus-visible {
+    outline: 2px solid rgba(200, 155, 60, 0.6);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* ─── Utility layer ──────────────────────────────────────────────────────────── */
+@layer utilities {
+
+  /* ── Gold gradient text ── */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #C89B3C 0%, #E7B75F 50%, #F5D98B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Glassmorphism cards ── */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(200, 155, 60, 0.15);
+  }
+
+  .glass-card-dark {
+    background: rgba(11, 11, 11, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(200, 155, 60, 0.18);
+  }
+
+  /* ── Gold border glow ── */
+  .gold-border-glow {
+    border: 1px solid rgba(200, 155, 60, 0.25);
+    box-shadow: 0 0 20px rgba(200, 155, 60, 0.08), inset 0 1px 0 rgba(255,255,255,0.04);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .gold-border-glow:hover {
+    border-color: rgba(200, 155, 60, 0.65);
+    box-shadow: 0 0 40px rgba(200, 155, 60, 0.22), 0 0 80px rgba(200, 155, 60, 0.08);
+  }
+
+  /* ── Section padding — consistent vertical rhythm ── */
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-padding {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-top: 9rem;
+      padding-bottom: 9rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  /* ── Animated section divider ── */
+  .section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(200,155,60,0.25) 30%, rgba(231,183,95,0.5) 50%, rgba(200,155,60,0.25) 70%, transparent 100%);
+    background-size: 200% 100%;
+    animation: dividerShimmer 4s linear infinite;
+  }
+
+  /* ── Cursor glow blob ── */
+  .cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 380px;
+    height: 380px;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at center,
+      rgba(200, 155, 60, 0.18) 0%,
+      rgba(200, 155, 60, 0.06) 40%,
+      transparent 70%
+    );
+    will-change: transform;
+    mix-blend-mode: screen;
+  }
+
+  /* ── Cursor dot (inner) ── */
+  .cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    pointer-events: none;
+    z-index: 10000;
+    border-radius: 50%;
+    background: rgba(200, 155, 60, 0.9);
+    will-change: transform;
+    mix-blend-mode: difference;
+  }
+
+  /* ── Cursor ring (outer) ── */
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    pointer-events: none;
+    z-index: 9998;
+    border-radius: 50%;
+    border: 1px solid rgba(200, 155, 60, 0.5);
+    will-change: transform;
+  }
+
+  /* ── Gold border shimmer for featured card ── */
+  .border-shimmer {
+    position: relative;
+  }
+
+  .border-shimmer::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(200, 155, 60, 0.15) 0%,
+      rgba(231, 183, 95, 0.95) 25%,
+      rgba(245, 217, 139, 1) 50%,
+      rgba(231, 183, 95, 0.95) 75%,
+      rgba(200, 155, 60, 0.15) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderShimmer 2.8s linear infinite;
+    pointer-events: none;
+  }
+
+  /* ── Reverse spin ── */
+  .animate-spin-reverse {
+    animation: spin 30s linear infinite reverse;
+  }
+
+  /* ── Trust ticker ── */
+  .animate-ticker {
+    animation: ticker 30s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-ticker:hover {
+    animation-play-state: paused;
+  }
+
+  /* ── Animated gradient background ── */
+  .animate-gradient-bg {
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  /* ── Gold light streak ── */
+  .gold-streak {
+    position: absolute;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(200,155,60,0.4), transparent);
+    animation: streakFall 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* ── Magnetic button base ── */
+  .btn-magnetic {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.3s ease;
+  }
+
+  /* ── Ripple container ── */
+  .ripple-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── Premium input ── */
+  .premium-input {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .premium-input:focus-within {
+    border-color: rgba(200, 155, 60, 0.55);
+    background: rgba(200, 155, 60, 0.04);
+    box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.08), 0 0 20px rgba(200, 155, 60, 0.1);
+  }
+
+  /* ── Ambient glow layers ── */
+  .ambient-glow-gold {
+    background: radial-gradient(ellipse at center, rgba(200,155,60,0.12) 0%, transparent 65%);
+  }
+
+  .ambient-glow-gold-sm {
+    background: radial-gradient(ellipse at center, rgba(200,155,60,0.08) 0%, transparent 60%);
+  }
+
+  /* ── Depth shadow ── */
+  .depth-shadow {
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.4),
+      0 4px 12px rgba(0,0,0,0.3),
+      0 16px 40px rgba(0,0,0,0.2),
+      0 0 0 1px rgba(255,255,255,0.03);
+  }
+
+  /* ── Luxury card ── */
+  .luxury-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(200, 155, 60, 0.12);
+    box-shadow:
+      0 4px 24px rgba(0,0,0,0.35),
+      0 1px 0 rgba(255,255,255,0.04) inset,
+      0 0 40px rgba(200,155,60,0.04);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1);
+  }
+
+  .luxury-card:hover {
+    border-color: rgba(200, 155, 60, 0.35);
+    box-shadow:
+      0 8px 40px rgba(0,0,0,0.45),
+      0 1px 0 rgba(255,255,255,0.06) inset,
+      0 0 60px rgba(200,155,60,0.1);
+  }
+}
+
+/* ─── Keyframes ──────────────────────────────────────────────────────────────── */
+
+@keyframes borderShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes dividerShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes streakFall {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 0.6; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 155, 60, 0.4); }
+  50%       { box-shadow: 0 0 0 16px rgba(200, 155, 60, 0); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+@keyframes ripple {
+  0%   { transform: scale(0); opacity: 0.5; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* ─── Utility animation classes ─────────────────────────────────────────────── */
+
+.animate-float-y {
+  animation: floatY 6s ease-in-out infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulseGold 2.2s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+/* ─── Ripple effect ──────────────────────────────────────────────────────────── */
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(200, 155, 60, 0.25);
+  animation: ripple 0.7s linear forwards;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+/* ─── Page reveal overlay ────────────────────────────────────────────────────── */
+.page-reveal {
+  animation: pageReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes pageReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Smooth image zoom on hover ─────────────────────────────────────────────── */
+.img-zoom-container {
+  overflow: hidden;
+}
+
+.img-zoom-container img,
+.img-zoom-container .img-zoom-inner {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.img-zoom-container:hover img,
+.img-zoom-container:hover .img-zoom-inner {
+  transform: scale(1.06);
+}
+
+/* ─── Elegant section separator ─────────────────────────────────────────────── */
+.section-sep {
+  position: relative;
+  height: 1px;
+  overflow: visible;
+}
+
+.section-sep::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(200,155,60,0.3) 30%, rgba(231,183,95,0.5) 50%, rgba(200,155,60,0.3) 70%, transparent);
+}
+
+.section-sep::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(200, 155, 60, 0.5);
+  font-size: 10px;
+  background: #0B0B0B;
+  padding: 0 8px;
+}
+
+/* ─── Mobile touch improvements ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* Ensure minimum tap target */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Prevent text size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
