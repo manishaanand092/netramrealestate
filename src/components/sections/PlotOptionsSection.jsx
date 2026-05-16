@@ -56,7 +56,7 @@ function PlotCard({ plot, index, inView }) {
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        whileHover={{ scale: 1.04, borderColor: 'rgba(200,155,60,0.8)' }}
+        whileHover={{ scale: 1.04, borderColor: 'rgba(234,183,127,0.8)' }}
         whileTap={{ scale: 0.97 }}
         className="mt-auto block text-center px-6 py-3 rounded-full border border-gold-500/40 text-gold-400 font-body font-semibold text-sm hover:bg-gold-500/5 transition-all duration-300"
       >
@@ -124,7 +124,7 @@ function FeaturedPlotCard({ plot, index, inView }) {
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(200,155,60,0.5)' }}
+        whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(28,51,40,0.55)' }}
         whileTap={{ scale: 0.97 }}
         className="mt-auto block text-center px-6 py-3 rounded-full bg-gold-gradient text-charcoal-900 font-body font-bold text-sm shadow-gold transition-all duration-300"
       >

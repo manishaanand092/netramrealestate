@@ -10,7 +10,7 @@ const TESTIMONIALS = [
     location: 'Delhi',
     initials: 'RS',
     rating: 5,
-    text: 'Netram Township is unlike anything I have seen. The Vaastu planning and spiritual concept resonated deeply with our family values. Dr. Sahni\'s vision is truly extraordinary.',
+    text: 'Netram Township is unlike anything I have seen. The Vaastu planning and spiritual concept resonated deeply with our family values. The vision behind this project is truly extraordinary.',
     plot: '200 Sq Yards',
   },
   {
@@ -18,7 +18,7 @@ const TESTIMONIALS = [
     location: 'Noida',
     initials: 'PA',
     rating: 5,
-    text: 'The transparency and professionalism of the Prakriti Guru team is unmatched. Zero hidden charges, complete documentation. We felt completely at peace throughout the process.',
+    text: 'The transparency and professionalism of the Netram team is unmatched. Zero hidden charges, complete documentation. We felt completely at peace throughout the process.',
     plot: '108 Sq Yards',
   },
   {
@@ -50,7 +50,7 @@ const TESTIMONIALS = [
     location: 'Haridwar',
     initials: 'KJ',
     rating: 5,
-    text: 'Dr. Vikas Sahni\'s knowledge of Tantra and Vaastu is evident in every detail of Netram. This is not just real estate — it is a sacred living experience.',
+    text: 'The knowledge of Tantra and Vaastu is evident in every detail of Netram. This is not just real estate — it is a sacred living experience.',
     plot: '226 Sq Yards',
   },
 ]

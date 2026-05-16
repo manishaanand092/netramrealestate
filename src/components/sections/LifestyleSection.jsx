@@ -40,7 +40,7 @@ const LIFESTYLE_BLOCKS = [
     emoji: '🛕',
     title: 'Sacred Architecture',
     body: 'Every structure designed with Vaastu precision and Tantric energy principles. Your home as a temple.',
-    image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80',
     accent: 'from-orange-900/60',
     size: 'sm',
   },

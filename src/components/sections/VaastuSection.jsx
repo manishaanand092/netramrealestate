@@ -88,7 +88,7 @@ export default function VaastuSection() {
                   {/* Compass needle */}
                   <div className="relative flex flex-col items-center">
                     <div className="w-0.5 h-10 bg-gradient-to-b from-gold-400 to-transparent rounded-full" />
-                    <div className="w-2 h-2 rounded-full bg-gold-500 shadow-[0_0_8px_rgba(200,155,60,0.8)] -mt-1" />
+                    <div className="w-2 h-2 rounded-full bg-gold-500 shadow-[0_0_8px_rgba(234,183,127,0.7)] -mt-1" />
                     <div className="w-0.5 h-6 bg-gradient-to-b from-transparent to-white/20 rounded-full" />
                   </div>
 

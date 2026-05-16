@@ -35,13 +35,13 @@ export default {
   // COMPANY INFO
   // =============================================
   company: {
-    name: "Prakriti Guru Estate LLP",
+    name: "Netram Township",
     founder: {
       name: "Dr. Vikas Sahni",
       designation: "CMD & Founder",
       title: "Tantra Acharya & Real Estate Visionary",
       bio:
-        "Dr. Vikas Sahni is the CMD and Founder of Prakriti Guru Estate LLP and Founder of Property Guru. He has successfully led thousands of real estate transactions with a strong reputation for transparency, trust, and zero consumer complaints.",
+        "Dr. Vikas Sahni is the CMD and Founder of Netram Township and Founder of Property Guru. He has successfully led thousands of real estate transactions with a strong reputation for transparency, trust, and zero consumer complaints.",
       spiritualBackground:
         "He holds a rare doctoral degree in Tantra and gained deep knowledge of Jyotish and Tantra under the guidance of Dr. Pandit Diwakar Sharma Ji and Baba Kamraj.",
       vision:
@@ -55,7 +55,7 @@ export default {
   contact: {
     phone: "+91 9431405275",
     whatsapp: "+91 9431405275",
-    email: "info@netram108.com",
+    email: "netramestate@gmail.com",
     officeAddress: {
       line1: "C-217, Park Town Commercial Complex",
       line2: "Aditya World City, Mehrauli",
@@ -64,7 +64,7 @@ export default {
       pincode: "201002",
       country: "India"
     },
-    website: "https://www.netram108.com"
+    website: "https://www.netram.online"
   },
 
   // =============================================
@@ -272,7 +272,6 @@ export default {
   navigation: [
     "Vision",
     "Philosophy",
-    "Visionary Behind Netram",
     "Masterplan",
     "Location",
     "Amenities",

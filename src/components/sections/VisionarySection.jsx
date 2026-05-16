@@ -3,18 +3,19 @@ import { motion, useInView } from 'framer-motion'
 import { Quote, Award, Star, Shield } from 'lucide-react'
 import NETRAM_DATA from '../../data.js'
 
-const { company, trust } = NETRAM_DATA
+const { company, trust, project } = NETRAM_DATA
 
+// Timeline — project milestones only, no personal references
 const TIMELINE = [
-  { year: '2005', label: 'Founded Property Guru', icon: '🏢' },
-  { year: '2012', label: 'Doctoral Degree in Tantra', icon: '📜' },
+  { year: '2005', label: 'Real Estate Legacy Founded', icon: '🏢' },
+  { year: '2012', label: 'Vedic Planning Research', icon: '📜' },
   { year: '2018', label: 'Thousands of Transactions', icon: '🤝' },
-  { year: '2024', label: 'Launched Netram Township', icon: '🏡' },
+  { year: '2024', label: 'Netram Township Launched', icon: '🏡' },
 ]
 
 const CREDENTIALS = [
   { icon: <Shield size={16} className="text-gold-400" />, label: 'Zero Consumer Complaints' },
-  { icon: <Award size={16} className="text-gold-400" />, label: 'Tantra Acharya' },
+  { icon: <Award size={16} className="text-gold-400" />, label: 'Vedic Architecture Expertise' },
   { icon: <Star size={16} className="text-gold-400" />, label: 'Thousands of Successful Transactions' },
 ]
 
@@ -61,7 +62,7 @@ export default function VisionarySection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-          {/* LEFT — Founder image */}
+          {/* LEFT — Visual panel */}
           <motion.div
             ref={imgRef}
             initial={{ opacity: 0, x: -60 }}
@@ -69,7 +70,7 @@ export default function VisionarySection() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="relative order-2 lg:order-1"
           >
-            {/* Floating particles around image */}
+            {/* Floating particles */}
             {PARTICLES.map((p, i) => <Particle key={i} style={p} />)}
 
             {/* Outer glow ring */}
@@ -90,26 +91,37 @@ export default function VisionarySection() {
                 className="absolute inset-[-6px] rounded-full border border-gold-500/15 pointer-events-none"
               />
 
-              {/* Image container */}
+              {/* Decorative panel — no image */}
               <div className="relative rounded-3xl overflow-hidden aspect-[3/4]">
                 <div className="absolute inset-0 bg-gradient-to-br from-charcoal-700 via-charcoal-600 to-charcoal-700" />
+                {/* Gold radial glow */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,155,60,0.12)_0%,transparent_65%)]" />
+                {/* Subtle grid pattern */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center"
+                  className="absolute inset-0 opacity-[0.04]"
                   style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80')",
-                    opacity: 0.35,
+                    backgroundImage: 'linear-gradient(rgba(200,155,60,1) 1px, transparent 1px), linear-gradient(90deg, rgba(200,155,60,1) 1px, transparent 1px)',
+                    backgroundSize: '40px 40px',
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/90 via-charcoal-900/20 to-transparent" />
+                {/* Center Om symbol */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-8xl mb-4 opacity-20">🕉️</div>
+                    <p className="font-heading text-2xl font-bold text-gold-gradient opacity-60">Netram</p>
+                    <p className="font-body text-xs text-white/30 tracking-[0.3em] uppercase mt-1">Township</p>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/90 via-transparent to-transparent" />
 
-                {/* Signature overlay */}
+                {/* Project identity overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="glass-card-dark rounded-2xl p-4 border border-gold-500/25">
                     <p className="font-heading text-xl font-bold text-white mb-0.5">
-                      {company.founder.name}
+                      Netram Township
                     </p>
                     <p className="font-body text-xs text-gold-400 tracking-wide">
-                      {company.founder.title}
+                      {project.type}
                     </p>
                   </div>
                 </div>
@@ -119,15 +131,15 @@ export default function VisionarySection() {
                 <div className="absolute top-4 left-4 w-14 h-14 border-t-2 border-l-2 border-gold-500/40 rounded-tl-xl" />
               </div>
 
-              {/* Floating credential badges */}
+              {/* Floating project badges */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -top-4 -right-4 sm:-right-8 glass-card border border-gold-500/30 rounded-2xl p-3 shadow-gold"
               >
                 <div className="text-center">
-                  <div className="text-2xl mb-1">🎓</div>
-                  <div className="font-body text-xs text-gold-400 font-semibold whitespace-nowrap">PhD in Tantra</div>
+                  <div className="text-2xl mb-1">🕉️</div>
+                  <div className="font-body text-xs text-gold-400 font-semibold whitespace-nowrap">Vedic Design</div>
                 </div>
               </motion.div>
 
@@ -153,7 +165,7 @@ export default function VisionarySection() {
               transition={{ duration: 0.5 }}
               className="font-body text-xs text-gold-400 uppercase tracking-[0.3em]"
             >
-              The Visionary Behind Netram
+              The Vision Behind Netram
             </motion.p>
 
             {/* Heading */}
@@ -163,11 +175,10 @@ export default function VisionarySection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight"
             >
-              {company.founder.name}
+              A Legacy of{' '}
+              <span className="text-gold-gradient italic">Conscious</span>
               <br />
-              <span className="text-gold-gradient italic text-2xl sm:text-3xl lg:text-4xl">
-                {company.founder.designation}
-              </span>
+              Real Estate
             </motion.h2>
 
             {/* Gold divider */}
@@ -182,24 +193,24 @@ export default function VisionarySection() {
               <div className="h-0.5 w-8 bg-gold-gradient opacity-40" />
             </motion.div>
 
-            {/* Bio */}
+            {/* Description — company focused, no personal bio */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="font-body text-base text-white/60 leading-relaxed"
             >
-              {company.founder.bio}
+              Netram Township has built a trusted legacy of thousands of successful real estate transactions, guided by a commitment to transparency, integrity and zero consumer complaints.
             </motion.p>
 
-            {/* Spiritual background */}
+            {/* Spiritual context */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.35 }}
               className="font-body text-sm text-white/45 leading-relaxed italic"
             >
-              {company.founder.spiritualBackground}
+              Rooted in deep knowledge of Jyotish, Tantra and Vedic science, Netram Township is the culmination of years of research into conscious, spiritually aligned living.
             </motion.p>
 
             {/* Credentials */}
@@ -220,14 +231,13 @@ export default function VisionarySection() {
               ))}
             </motion.div>
 
-            {/* Premium quote block */}
+            {/* Premium quote block — no personal attribution */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.45 }}
               className="relative glass-card rounded-2xl p-6 border-l-2 border-gold-500 overflow-hidden"
             >
-              {/* Background glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-gold-500/5 to-transparent pointer-events-none" />
               <Quote size={28} className="text-gold-500/40 mb-3" />
               <p className="font-heading text-lg sm:text-xl text-white/85 italic leading-relaxed relative z-10">
@@ -236,12 +246,12 @@ export default function VisionarySection() {
               <div className="flex items-center gap-3 mt-4">
                 <div className="h-px w-8 bg-gold-gradient" />
                 <p className="font-body text-xs text-gold-400 font-semibold tracking-wide">
-                  — {company.founder.name}
+                  — {company.name}
                 </p>
               </div>
             </motion.div>
 
-            {/* Timeline */}
+            {/* Timeline — project milestones */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}

@@ -19,7 +19,6 @@ const PlotOptionsSection = lazy(() => import('./components/sections/PlotOptionsS
 const MasterplanSection  = lazy(() => import('./components/sections/MasterplanSection'))
 const LocationSection    = lazy(() => import('./components/sections/LocationSection'))
 const WhyInvestSection   = lazy(() => import('./components/sections/WhyInvestSection'))
-const VisionarySection   = lazy(() => import('./components/sections/VisionarySection'))
 const TrustSection       = lazy(() => import('./components/sections/TrustSection'))
 const LifestyleSection   = lazy(() => import('./components/sections/LifestyleSection'))
 const TestimonialsSection = lazy(() => import('./components/sections/TestimonialsSection'))
@@ -120,8 +119,6 @@ export default function App() {
             <LocationSection />
             <SectionDivider />
             <WhyInvestSection />
-            <SectionDivider />
-            <VisionarySection />
             <SectionDivider />
             <TrustSection />
             <SectionDivider />

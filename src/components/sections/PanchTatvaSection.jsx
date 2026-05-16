@@ -144,10 +144,10 @@ function MandalaCenter() {
       <div
         className="relative z-10 w-[120px] h-[120px] rounded-full flex items-center justify-center"
         style={{
-          background: 'radial-gradient(circle, rgba(200,155,60,0.12) 0%, rgba(11,11,11,0.8) 70%)',
+          background: 'radial-gradient(circle, rgba(28,51,40,0.18) 0%, rgba(11,11,11,0.8) 70%)',
           border: '2px solid transparent',
           backgroundClip: 'padding-box',
-          boxShadow: '0 0 40px rgba(200, 155, 60, 0.25), inset 0 0 20px rgba(200, 155, 60, 0.08)',
+          boxShadow: '0 0 40px rgba(28,51,40,0.35), inset 0 0 20px rgba(28,51,40,0.1)',
         }}
       >
         {/* Gold gradient border via pseudo-element workaround using a wrapper */}

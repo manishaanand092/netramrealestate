@@ -99,8 +99,7 @@ export default function LuxuryFooter() {
                 Developed by
               </p>
               <p className="font-heading text-sm font-semibold text-white">{company.name}</p>
-              <p className="font-body text-xs text-white/35 mt-0.5">{company.founder.name}</p>
-              <p className="font-body text-xs text-white/25 italic mt-0.5">{company.founder.title}</p>
+              <p className="font-body text-xs text-white/25 italic mt-0.5">{project.type}</p>
             </div>
           </div>
 

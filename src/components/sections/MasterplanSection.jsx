@@ -52,15 +52,15 @@ function BlueprintPanel({ inView }) {
           className="absolute inset-0 opacity-[0.08]"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(200,155,60,1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(200,155,60,1) 1px, transparent 1px)
+              linear-gradient(rgba(28,51,40,0.6) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(28,51,40,0.6) 1px, transparent 1px)
             `,
             backgroundSize: '40px 40px',
           }}
         />
 
         {/* Subtle radial glow at center */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,155,60,0.08)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(28,51,40,0.12)_0%,transparent_70%)]" />
 
         {/* Center label */}
         <div className="absolute inset-0 flex items-center justify-center">
@@ -213,7 +213,7 @@ export default function MasterplanSection() {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.04, borderColor: 'rgba(200,155,60,0.8)' }}
+                whileHover={{ scale: 1.04, borderColor: 'rgba(234,183,127,0.8)' }}
                 whileTap={{ scale: 0.97 }}
                 className="flex-1 text-center px-6 py-3.5 rounded-full border border-gold-500/40 text-gold-400 font-body font-semibold text-sm hover:bg-gold-500/5 transition-all duration-300"
               >

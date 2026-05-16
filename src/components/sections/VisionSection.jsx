@@ -47,11 +47,11 @@ export default function VisionSection() {
                 <div className="glass-card-dark rounded-2xl p-4 border border-gold-500/20">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-gold-gradient flex items-center justify-center flex-shrink-0">
-                      <span className="font-heading font-bold text-charcoal-900 text-sm">VS</span>
+                      <span className="font-heading font-bold text-charcoal-900 text-sm">N</span>
                     </div>
                     <div>
-                      <p className="font-body font-semibold text-white text-sm">{company.founder.name}</p>
-                      <p className="font-body text-xs text-gold-400">{company.founder.title}</p>
+                      <p className="font-body font-semibold text-white text-sm">{project.name}</p>
+                      <p className="font-body text-xs text-gold-400">{project.type}</p>
                     </div>
                   </div>
                 </div>
@@ -143,9 +143,9 @@ export default function VisionSection() {
             >
               <Quote size={20} className="text-gold-500/50 mb-2" />
               <p className="font-body text-sm text-white/70 italic leading-relaxed">
-                "{company.founder.vision}"
+                "To create a conscious living ecosystem where nature, cosmic energies and ancient Sanatan wisdom combine with modern luxury living."
               </p>
-              <p className="font-body text-xs text-gold-400 mt-3">— {company.founder.name}</p>
+              <p className="font-body text-xs text-gold-400 mt-3">— Netram Township</p>
             </motion.div>
 
             {/* Highlight points */}

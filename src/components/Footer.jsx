@@ -135,11 +135,8 @@ export default function Footer() {
               <p className="font-heading text-sm font-semibold text-white mb-1">
                 {company.name}
               </p>
-              <p className="font-body text-xs text-white/40 mb-3">
-                {company.founder.name}
-              </p>
               <p className="font-body text-xs text-white/40 italic leading-relaxed">
-                {company.founder.title}
+                {project.type}
               </p>
             </div>
             <a

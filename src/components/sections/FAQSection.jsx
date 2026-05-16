@@ -10,7 +10,7 @@ const FAQS = [
   },
   {
     q: 'Is the project Vaastu compliant?',
-    a: 'Absolutely. Netram is India\'s first direction-conscious township where every plot faces North, North-East or North-West only. There are no South-facing homes — ever. The entire masterplan is designed by Dr. Vikas Sahni, a PhD holder in Tantra with deep expertise in Vaastu Shastra.',
+    a: 'Absolutely. Netram is India\'s first direction-conscious township where every plot faces North, North-East or North-West only. There are no South-facing homes — ever. The entire masterplan is crafted with deep expertise in Vaastu Shastra and Vedic spatial science.',
   },
   {
     q: 'Where is Netram Township located?',
