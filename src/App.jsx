@@ -16,6 +16,7 @@ const PanchTatvaSection  = lazy(() => import('./components/sections/PanchTatvaSe
 const VaastuSection      = lazy(() => import('./components/sections/VaastuSection'))
 const AmenitiesSection   = lazy(() => import('./components/sections/AmenitiesSection'))
 const PlotOptionsSection = lazy(() => import('./components/sections/PlotOptionsSection'))
+const PricingSection     = lazy(() => import('./components/sections/PricingSection'))
 const MasterplanSection  = lazy(() => import('./components/sections/MasterplanSection'))
 const LocationSection    = lazy(() => import('./components/sections/LocationSection'))
 const WhyInvestSection   = lazy(() => import('./components/sections/WhyInvestSection'))
@@ -113,6 +114,8 @@ export default function App() {
             <AmenitiesSection />
             <SectionDivider />
             <PlotOptionsSection />
+            <SectionDivider />
+            <PricingSection />
             <SectionDivider />
             <MasterplanSection />
             <SectionDivider />
