@@ -210,7 +210,7 @@ export default function PricingSection() {
             whileTap={{ scale: 0.97 }}
             className="px-9 py-4 bg-gold-gradient text-charcoal-900 font-body font-bold text-sm rounded-full shadow-gold transition-all duration-300"
           >
-            Book at Pre-Launch Price →
+            Book Now →
           </motion.a>
         </motion.div>
 
