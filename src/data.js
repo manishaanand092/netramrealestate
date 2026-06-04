@@ -64,7 +64,7 @@ export default {
       pincode: "201002",
       country: "India"
     },
-    website: "https://www.netram.online"
+    website: "https://www.netramprojects.com"
   },
 
   // =============================================
