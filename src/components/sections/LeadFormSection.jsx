@@ -205,26 +205,52 @@ export default function LeadFormSection() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
-  const [form, setForm] = useState({
+  const INITIAL_FORM = {
     name: '',
     phone: '',
     email: '',
     plotSize: PLOT_OPTIONS[0],
     message: '',
-  })
+  }
+
+  const [form, setForm] = useState(INITIAL_FORM)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const set = (field) => (e) => setForm((prev) => ({ ...prev, [field]: e.target.value }))
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!form.name || !form.phone) return
     setLoading(true)
-    setTimeout(() => {
+    setError('')
+
+    try {
+      const res = await fetch('https://formspree.io/f/mojzoojq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          'plot-size': form.plotSize,
+          message: form.message,
+        }),
+      })
+
+      if (res.ok) {
+        setForm(INITIAL_FORM)
+        setSubmitted(true)
+      } else {
+        const data = await res.json().catch(() => ({}))
+        setError(data?.errors?.[0]?.message || 'Submission failed. Please try again.')
+      }
+    } catch {
+      setError('Network error. Please check your connection and try again.')
+    } finally {
       setLoading(false)
-      setSubmitted(true)
-    }, 1200)
+    }
   }
 
   const waLink = `https://wa.me/${contact.whatsapp.replace(/\D/g, '')}?text=Hi%2C%20I%27m%20interested%20in%20${encodeURIComponent(project.name)}%20Pre-Launch%20Plots.%20Please%20share%20details.`
@@ -420,6 +446,13 @@ export default function LeadFormSection() {
                     onChange={set('message')}
                     icon={MessageSquare}
                   />
+
+                  {/* Error message */}
+                  {error && (
+                    <p className="font-body text-xs text-red-400/90 text-center bg-red-500/8 border border-red-500/20 rounded-xl px-4 py-3">
+                      {error}
+                    </p>
+                  )}
 
                   {/* Buttons */}
                   <div className="flex flex-col sm:flex-row gap-3 mt-2">
