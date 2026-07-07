@@ -194,7 +194,7 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* RIGHT: Floating Glass Card */}
+          {/* RIGHT: Profile Video */}
           <motion.div
             initial={{ opacity: 0, x: 60, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -209,65 +209,20 @@ export default function HeroSection() {
               {/* Glow behind card */}
               <div className="absolute inset-0 bg-gold-500/10 rounded-3xl blur-3xl scale-110" />
 
-              <div className="relative glass-card rounded-3xl p-6 sm:p-8 border border-gold-500/20 shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
-                {/* Card header */}
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <p className="font-body text-xs text-gold-400/70 uppercase tracking-widest mb-1">
-                      {project.status}
-                    </p>
-                    <h3 className="font-heading text-xl font-bold text-white">
-                      {project.name}
-                    </h3>
-                  </div>
-                  <div className="w-12 h-12 rounded-full bg-gold-gradient flex items-center justify-center shadow-gold">
-                    <span className="font-heading font-bold text-charcoal-900 text-lg">N</span>
-                  </div>
-                </div>
-
-                {/* Divider */}
-                <div className="h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent mb-6" />
-
-                {/* Highlight items */}
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { value: '55%', label: 'Green Area', icon: '🌿' },
-                    { value: 'Vaastu', label: 'Perfect', icon: '✨' },
-                    { value: 'Maa', label: 'Ganga Touch', icon: '🌊' },
-                    { value: 'Limited', label: 'Pre-Launch', icon: '🔥' },
-                  ].map((item) => (
-                    <div
-                      key={item.label}
-                      className="flex flex-col items-center text-center p-3 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-gold-500/30 transition-all duration-300"
-                    >
-                      <span className="text-2xl mb-1">{item.icon}</span>
-                      <span className="font-heading text-lg font-bold text-gold-400">
-                        {item.value}
-                      </span>
-                      <span className="font-body text-xs text-white/50 mt-0.5">
-                        {item.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Location */}
-                <div className="mt-6 flex items-center gap-2 text-white/40 text-xs font-body">
-                  <MapPin size={12} className="text-gold-500" />
-                  <span>{project.location}</span>
-                </div>
-
-                {/* Bottom CTA */}
-                <motion.a
-                  href={`https://wa.me/${contact.whatsapp.replace(/\D/g, '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="mt-5 w-full block text-center py-3 bg-gold-gradient text-charcoal-900 font-body font-bold text-sm rounded-xl shadow-gold"
-                >
-                  Enquire Now →
-                </motion.a>
+              <div className="relative glass-card rounded-3xl border border-gold-500/20 shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden">
+                <video
+                  src="/profile video/Netram Profile Video.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-auto block"
+                  style={{ display: 'block' }}
+                />
+                {/* Subtle bottom gradient overlay */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-charcoal-900/60 to-transparent pointer-events-none" />
+                {/* Gold top accent line */}
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent pointer-events-none" />
               </div>
             </motion.div>
           </motion.div>
