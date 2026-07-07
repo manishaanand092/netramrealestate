@@ -27,7 +27,7 @@ export default function SiteVisualsSection() {
 
   return (
     <section
-      id="site-visuals"
+      id="gallery"
       ref={ref}
       className="relative bg-charcoal-800 section-padding overflow-hidden"
     >

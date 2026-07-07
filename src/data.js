@@ -276,7 +276,7 @@ export default {
     "Location",
     "Amenities",
     "Plots",
-    "Site Visuals",
+    "Gallery",
     "Contact"
   ],
 

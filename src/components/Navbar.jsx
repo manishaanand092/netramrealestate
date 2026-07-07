@@ -107,7 +107,7 @@ export default function Navbar() {
 
             {/* Desktop nav links */}
             <div className="hidden lg:flex items-center gap-5 xl:gap-7">
-              {navigation.slice(0, 6).map((item) => (
+              {navigation.slice(0, 8).map((item) => (
                 <NavLink
                   key={item}
                   label={item}
