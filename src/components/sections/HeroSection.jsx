@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, MapPin, Star, Leaf, Sparkles } from 'lucide-react'
+import { ChevronDown, MapPin, Star, Leaf, Sparkles, Volume2, VolumeX } from 'lucide-react'
 import NETRAM_DATA from '../../data.js'
 
 const { heroSection, project, contact } = NETRAM_DATA
@@ -54,6 +54,15 @@ const fadeUp = {
 }
 
 export default function HeroSection() {
+  const videoRef = useRef(null)
+  const [muted, setMuted] = useState(true)
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted
+      setMuted(videoRef.current.muted)
+    }
+  }
   return (
     <section
       id="hero"
@@ -211,6 +220,7 @@ export default function HeroSection() {
 
               <div className="relative glass-card rounded-3xl border border-gold-500/20 shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden">
                 <video
+                  ref={videoRef}
                   src="/profile video/Netram Profile Video.mp4"
                   autoPlay
                   muted
@@ -223,6 +233,17 @@ export default function HeroSection() {
                 <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-charcoal-900/60 to-transparent pointer-events-none" />
                 {/* Gold top accent line */}
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/50 to-transparent pointer-events-none" />
+                {/* Mute / Unmute toggle */}
+                <button
+                  onClick={toggleMute}
+                  className="absolute bottom-4 right-4 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-card-dark border border-gold-500/30 text-gold-400 hover:border-gold-500/60 hover:text-gold-300 transition-all duration-300"
+                  aria-label={muted ? 'Unmute video' : 'Mute video'}
+                >
+                  {muted ? <VolumeX size={13} /> : <Volume2 size={13} />}
+                  <span className="font-body text-[10px] font-medium tracking-wide">
+                    {muted ? 'Unmute' : 'Mute'}
+                  </span>
+                </button>
               </div>
             </motion.div>
           </motion.div>
