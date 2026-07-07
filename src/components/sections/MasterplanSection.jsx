@@ -38,37 +38,18 @@ function BlueprintPanel({ inView }) {
       {/* Outer glow */}
       <div className="absolute -inset-4 bg-gold-500/8 rounded-[2rem] blur-2xl pointer-events-none" />
 
-      {/* Main image placeholder */}
+      {/* Masterplan image */}
       <motion.div
         whileHover={{ scale: 1.03 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="relative rounded-3xl overflow-hidden aspect-[4/3] cursor-default"
+        className="relative rounded-3xl overflow-hidden cursor-default"
       >
-        {/* Blueprint-feel dark gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal-700 via-[#0d1a2a] to-charcoal-800" />
-
-        {/* Grid overlay — architectural blueprint feel */}
-        <div
-          className="absolute inset-0 opacity-[0.08]"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(28,51,40,0.6) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(28,51,40,0.6) 1px, transparent 1px)
-            `,
-            backgroundSize: '40px 40px',
-          }}
+        <img
+          src="/masterplan/Netram Layout  - Masterplan section image.jpeg"
+          alt="Netram Township Masterplan"
+          className="w-full h-auto block rounded-3xl"
+          loading="lazy"
         />
-
-        {/* Subtle radial glow at center */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(28,51,40,0.12)_0%,transparent_70%)]" />
-
-        {/* Center label */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="glass-card rounded-2xl px-6 py-4 border border-gold-500/30 text-center">
-            <p className="font-heading text-2xl font-bold text-gold-gradient">Netram</p>
-            <p className="font-body text-xs text-white/40 mt-1 tracking-widest uppercase">Township Layout</p>
-          </div>
-        </div>
 
         {/* Floating glassmorphism pill labels at corners */}
         {FLOATING_LABELS.map(({ label, position }) => (

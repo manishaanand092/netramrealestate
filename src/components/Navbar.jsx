@@ -98,17 +98,11 @@ export default function Navbar() {
               className="flex items-center gap-2.5 group"
               aria-label="Go to top"
             >
-              <div className="w-8 h-8 rounded-full bg-gold-gradient flex items-center justify-center shadow-gold group-hover:shadow-gold-lg transition-shadow duration-300">
-                <span className="text-charcoal-900 font-heading font-bold text-sm leading-none">N</span>
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="font-heading text-xl md:text-2xl font-bold text-gold-gradient tracking-[0.2em]">
-                  NETRAM
-                </span>
-                <span className="font-body text-[9px] text-white/25 tracking-[0.25em] uppercase hidden sm:block">
-                  Township
-                </span>
-              </div>
+              <img
+                src="/logo/Netam Logo.png"
+                alt="Netram Township"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
             </motion.button>
 
             {/* Desktop nav links */}

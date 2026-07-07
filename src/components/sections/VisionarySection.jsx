@@ -91,28 +91,17 @@ export default function VisionarySection() {
                 className="absolute inset-[-6px] rounded-full border border-gold-500/15 pointer-events-none"
               />
 
-              {/* Decorative panel — no image */}
+              {/* Profile video */}
               <div className="relative rounded-3xl overflow-hidden aspect-[3/4]">
-                <div className="absolute inset-0 bg-gradient-to-br from-charcoal-700 via-charcoal-600 to-charcoal-700" />
-                {/* Gold radial glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,155,60,0.12)_0%,transparent_65%)]" />
-                {/* Subtle grid pattern */}
-                <div
-                  className="absolute inset-0 opacity-[0.04]"
-                  style={{
-                    backgroundImage: 'linear-gradient(rgba(200,155,60,1) 1px, transparent 1px), linear-gradient(90deg, rgba(200,155,60,1) 1px, transparent 1px)',
-                    backgroundSize: '40px 40px',
-                  }}
+                <video
+                  src="/profile video/Netram Profile Video.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
                 />
-                {/* Center Om symbol */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-8xl mb-4 opacity-20">🕉️</div>
-                    <p className="font-heading text-2xl font-bold text-gold-gradient opacity-60">Netram</p>
-                    <p className="font-body text-xs text-white/30 tracking-[0.3em] uppercase mt-1">Township</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/90 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/70 via-transparent to-transparent pointer-events-none" />
 
                 {/* Project identity overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -127,8 +116,8 @@ export default function VisionarySection() {
                 </div>
 
                 {/* Corner accents */}
-                <div className="absolute top-4 right-4 w-14 h-14 border-t-2 border-r-2 border-gold-500/40 rounded-tr-xl" />
-                <div className="absolute top-4 left-4 w-14 h-14 border-t-2 border-l-2 border-gold-500/40 rounded-tl-xl" />
+                <div className="absolute top-4 right-4 w-14 h-14 border-t-2 border-r-2 border-gold-500/40 rounded-tr-xl pointer-events-none" />
+                <div className="absolute top-4 left-4 w-14 h-14 border-t-2 border-l-2 border-gold-500/40 rounded-tl-xl pointer-events-none" />
               </div>
 
               {/* Floating project badges */}
